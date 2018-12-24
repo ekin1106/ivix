@@ -1,0 +1,835 @@
+False"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 138, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 75, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 733, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 594, in urlopen
+    chunked=chunked)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 361, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.5/http/client.py", line 1107, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1152, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1103, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 163, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 147, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.HTTPConnection object at 0x75d20950>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 643, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 363, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='nuff.eastmoney.com', port=80): Max retries exceeded with url: /EM_Finance2015TradeInterface/JS.ashx?id=0000011&token=44c9d251add88e27b65ed86506f6e5da&cb=callback020420580954748035&callback=callback020420580954748035&_=1541401708403 (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x75d20950>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/Desktop/ivix/checkHqstat.py", line 28, in <module>
+    getHqStat()
+  File "/home/pi/Desktop/ivix/checkHqstat.py", line 6, in getHqStat
+    resp = session.get(url)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 501, in get
+    return self.request('GET', url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 487, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='nuff.eastmoney.com', port=80): Max retries exceeded with url: /EM_Finance2015TradeInterface/JS.ashx?id=0000011&token=44c9d251add88e27b65ed86506f6e5da&cb=callback020420580954748035&callback=callback020420580954748035&_=1541401708403 (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x75d20950>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+Traceback (most recent call last):
+  File "/home/pi/Desktop/ivix/checkHqstat.py", line 28, in <module>
+    getHqStat()
+  File "/home/pi/Desktop/ivix/checkHqstat.py", line 15, in getHqStat
+    with open('~/Desktop/ivix/gethqstat.txt', 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '~/Desktop/ivix/gethqstat.txt'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/ivix/checkHqstat.py", line 28, in <module>
+    getHqStat()
+  File "/home/pi/Desktop/ivix/checkHqstat.py", line 15, in getHqStat
+    with open('~/Desktop/ivix/gethqstat.txt', 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '~/Desktop/ivix/gethqstat.txt'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/ivix/checkHqstat.py", line 28, in <module>
+    getHqStat()
+  File "/home/pi/Desktop/ivix/checkHqstat.py", line 15, in getHqStat
+    with open('~/Desktop/ivix/gethqstat.txt', 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '~/Desktop/ivix/gethqstat.txt'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/ivix/checkHqstat.py", line 28, in <module>
+    getHqStat()
+  File "/home/pi/Desktop/ivix/checkHqstat.py", line 15, in getHqStat
+    with open('~/Desktop/ivix/gethqstat.txt', 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '~/Desktop/ivix/gethqstat.txt'
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+Error occurred during loading data. Trying to use cache server https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1107, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1152, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1103, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1253, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 712, in create_connection
+    raise err
+  File "/usr/lib/python3.5/socket.py", line 703, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+not TradeDay
+not TradeDay
+not TradeDay
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+"0"
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+  File "/home/pi/Desktop/ivix/iVIX.py", line 241
+    saveIvix()
+           ^
+IndentationError: expected an indented block
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+Error occurred during loading data. Trying to use cache server https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1107, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1152, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1103, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1253, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 712, in create_connection
+    raise err
+  File "/usr/lib/python3.5/socket.py", line 703, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+start
+tradeday
+2018-11-08
+2018-11-08 11:00
+('2018-11-8', '1.9780', '2.6000', '2.6190', '2.6780', '3.0000', '3.2990', '3.5060', '3.5500')
+done
+today is tradeday
+0
+Error occurred during loading data. Trying to use cache server https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1107, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1152, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1103, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1253, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 712, in create_connection
+    raise err
+  File "/usr/lib/python3.5/socket.py", line 703, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+start
+tradeday
+2018-11-09
+2018-11-09 11:00
+('2018-11-9', '2.0380', '2.5990', '2.6170', '2.6710', '3.0010', '3.3000', '3.5090', '3.5520')
+done
+/usr/lib/python3/dist-packages/pandas/core/indexing.py:141: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_with_indexer(indexer, value)
+/home/pi/Desktop/ivix/iVIX.py:162: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  put['CLOSE'].iloc[-1] = (putAll.ix[FF_idx].CLOSE + callAll.ix[FF_idx].CLOSE)/2.0
+2018/11/9
+2018/11/9 31.1314762221
+today is not tradeday
+1
+Error occurred during loading data. Trying to use cache server https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1107, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1152, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1103, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1253, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 712, in create_connection
+    raise err
+  File "/usr/lib/python3.5/socket.py", line 703, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+start
+not_tday
+not TradeDay
+not TradeDay
+today is tradeday
+2
+Error occurred during loading data. Trying to use cache server https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1107, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1152, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1103, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1253, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 712, in create_connection
+    raise err
+  File "/usr/lib/python3.5/socket.py", line 703, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+start
+tradeday
+2018-11-12
+2018-11-12 11:00
+('2018-11-12', '2.3090', '2.6240', '2.6270', '2.6750', '3.0010', '3.3000', '3.5100', '3.5530')
+done
+/usr/lib/python3/dist-packages/pandas/core/indexing.py:141: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_with_indexer(indexer, value)
+/home/pi/Desktop/ivix/iVIX.py:162: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  put['CLOSE'].iloc[-1] = (putAll.ix[FF_idx].CLOSE + callAll.ix[FF_idx].CLOSE)/2.0
+2018/11/12
+2018/11/12 31.8146320985
+today is tradeday
+0
+start
+tradeday
+2018-11-13
+2018-11-13 11:00
+('2018-11-13', '2.4680', '2.6330', '2.6360', '2.6850', '3.0040', '3.3000', '3.5160', '3.5580')
+done
+/usr/lib/python3/dist-packages/pandas/core/indexing.py:141: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_with_indexer(indexer, value)
+/home/pi/Desktop/ivix/iVIX.py:162: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  put['CLOSE'].iloc[-1] = (putAll.ix[FF_idx].CLOSE + callAll.ix[FF_idx].CLOSE)/2.0
+2018/11/13
+2018/11/13 31.0297831606
+today is tradeday
+0
+start
+tradeday
+2018-11-14
+2018-11-14 11:00
+('2018-11-14', '2.3250', '2.6320', '2.6380', '2.6850', '3.0080', '3.2980', '3.5120', '3.5540')
+done
+/usr/lib/python3/dist-packages/pandas/core/indexing.py:141: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_with_indexer(indexer, value)
+/home/pi/Desktop/ivix/iVIX.py:162: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  put['CLOSE'].iloc[-1] = (putAll.ix[FF_idx].CLOSE + callAll.ix[FF_idx].CLOSE)/2.0
+2018/11/14
+2018/11/14 30.5120934444
+today is tradeday
+0
+start
+tradeday
+2018-11-15
+2018-11-15 11:00
+('2018-11-15', '2.3390', '2.6290', '2.6380', '2.6850', '3.0100', '3.2960', '3.5120', '3.5500')
+done
+/usr/lib/python3/dist-packages/pandas/core/indexing.py:141: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_with_indexer(indexer, value)
+/home/pi/Desktop/ivix/iVIX.py:162: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  put['CLOSE'].iloc[-1] = (putAll.ix[FF_idx].CLOSE + callAll.ix[FF_idx].CLOSE)/2.0
+2018/11/15
+2018/11/15 29.8023473267
+today is tradeday
+0
+Error occurred during loading data. Trying to use cache server https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1107, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1152, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1103, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1253, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 712, in create_connection
+    raise err
+  File "/usr/lib/python3.5/socket.py", line 703, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+start
+tradeday
+2018-11-16
+2018-11-16 11:00
+('2018-11-16', '2.3450', '2.6290', '2.6410', '2.6840', '3.0230', '3.2970', '3.5130', '3.5530')
+done
+/usr/lib/python3/dist-packages/pandas/core/indexing.py:141: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_with_indexer(indexer, value)
+/home/pi/Desktop/ivix/iVIX.py:162: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  put['CLOSE'].iloc[-1] = (putAll.ix[FF_idx].CLOSE + callAll.ix[FF_idx].CLOSE)/2.0
+2018/11/16
+Traceback (most recent call last):
+  File "/home/pi/Desktop/ivix/iVIX.py", line 160, in calSigmaSquare
+    put['CLOSE'].iloc[-1] = (putAll.ix[FF_idx].CLOSE.values[1] + callAll.ix[FF_idx].CLOSE.values[0])/2.0
+AttributeError: 'numpy.float64' object has no attribute 'values'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/Desktop/ivix/iVIX.py", line 241, in <module>
+    saveIvix()
+  File "/home/pi/Desktop/ivix/iVIX.py", line 234, in saveIvix
+    print(lastestday,calDayVIX(lastestday))
+  File "/home/pi/Desktop/ivix/iVIX.py", line 214, in calDayVIX
+    next_sigma = calSigmaSquare(optionsNextTerm, next_F, R_next, T_next)
+  File "/home/pi/Desktop/ivix/iVIX.py", line 162, in calSigmaSquare
+    put['CLOSE'].iloc[-1] = (putAll.ix[FF_idx].CLOSE + callAll.ix[FF_idx].CLOSE)/2.0
+  File "/usr/lib/python3/dist-packages/pandas/core/indexing.py", line 141, in __setitem__
+    self._setitem_with_indexer(indexer, value)
+  File "/usr/lib/python3/dist-packages/pandas/core/indexing.py", line 565, in _setitem_with_indexer
+    value = self._align_series(indexer, Series(value))
+  File "/usr/lib/python3/dist-packages/pandas/core/indexing.py", line 698, in _align_series
+    ax = self.obj._get_axis(1)
+  File "/usr/lib/python3/dist-packages/pandas/core/generic.py", line 354, in _get_axis
+    name = self._get_axis_name(axis)
+  File "/usr/lib/python3/dist-packages/pandas/core/generic.py", line 351, in _get_axis_name
+    .format(axis, type(self)))
+ValueError: No axis named 1 for object type <class 'pandas.core.series.Series'>
+today is not tradeday
+1
+today is tradeday
+0
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1107, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1152, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1103, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1253, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 712, in create_connection
+    raise err
+  File "/usr/lib/python3.5/socket.py", line 703, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/Desktop/ivix/main_rasp.py", line 2, in <module>
+    from requests_html import HTMLSession
+  File "/usr/local/lib/python3.5/dist-packages/requests_html.py", line 22, in <module>
+    useragent = UserAgent()
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/fake.py", line 69, in __init__
+    self.load()
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/fake.py", line 78, in load
+    verify_ssl=self.verify_ssl,
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 250, in load_cached
+    update(path, use_cache_server=use_cache_server, verify_ssl=verify_ssl)
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 245, in update
+    write(path, load(use_cache_server=use_cache_server, verify_ssl=verify_ssl))
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 178, in load
+    raise exc
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/usr/local/lib/python3.5/dist-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+/usr/lib/python3/dist-packages/pandas/core/indexing.py:141: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  self._setitem_with_indexer(indexer, value)
+/home/pi/Desktop/ivix/iVIX.py:160: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  put['CLOSE'].iloc[-1] = (putAll.ix[FF_idx].CLOSE.values[1] + callAll.ix[FF_idx].CLOSE.values[0])/2.0
+2018/11/16
+2018/11/16 34.8439646194

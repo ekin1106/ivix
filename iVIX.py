@@ -10,10 +10,10 @@ import pandas as pd
 from scipy import interpolate
 
 
-shibor_rate = pd.read_csv('E:/shibor.csv',index_col=0,encoding='GBK')
-options_data = pd.read_csv('E:/options.csv',index_col=0,encoding='GBK')
-tradeday = pd.read_csv('E:/tradeday.csv',encoding='GBK')
-true_ivix = pd.read_csv('E:/tradeday.csv',encoding='GBK')
+shibor_rate = pd.read_csv('shibor.csv',index_col=0,encoding='GBK')
+options_data = pd.read_csv('options.csv',index_col=0,encoding='GBK')
+tradeday = pd.read_csv('tradeday.csv',encoding='GBK')
+true_ivix = pd.read_csv('tradeday.csv',encoding='GBK')
 
 #==============================================================================
 # 开始计算ivix部分
@@ -32,16 +32,16 @@ def periodsSplineRiskFreeInterestRate(options, date):
     for epd in exp_dates:
         epd = pd.to_datetime(epd)
         periods[epd] = (epd - date).days*1.0/365.0
-    shibor_date = datetime.strptime(shibor_rate.index[0], "%Y-%m-%d") 
+    shibor_date = datetime.strptime(shibor_rate.index[0], "%Y-%m-%d")
     if date >= shibor_date:
         date_str = shibor_rate.index[0]
         shibor_values = shibor_rate.ix[0].values
         #shibor_values = np.asarray(list(map(float,shibor_values)))
     else:
-        date_str = date.strftime("%Y-%m-%d") 
+        date_str = date.strftime("%Y-%m-%d")
         shibor_values = shibor_rate.loc[date_str].values
         #shibor_values = np.asarray(list(map(float,shibor_values)))
-        
+
     shibor = {}
     period = np.asarray([1.0, 7.0, 14.0, 30.0, 90.0, 180.0, 270.0, 360.0]) / 360.0
     min_period = min(period)
@@ -61,8 +61,8 @@ def periodsSplineRiskFreeInterestRate(options, date):
 def getHistDayOptions(vixDate,options_data):
     options_data = options_data.loc[vixDate,:]
     return options_data
-    
-    
+
+
 
 def getNearNextOptExpDate(options, vixDate):
     # 找到options中的当月和次月期权到期日；
@@ -121,7 +121,7 @@ def calSigmaSquare( options, FF, R, T):
     putAll  = options[options.EXE_MODE==u"认沽"].set_index(u"EXE_PRICE").sort_index()
     callAll['deltaK'] = 0.05
     putAll['deltaK']  = 0.05
-    
+
     # Interval between strike prices
     index = callAll.index
     if len(index) < 3:
@@ -139,7 +139,7 @@ def calSigmaSquare( options, FF, R, T):
             putAll['deltaK'].ix[index[i]] = (index[i+1]-index[i-1])/2.0
         putAll['deltaK'].ix[index[0]] = index[1]-index[0]
         putAll['deltaK'].ix[index[-1]] = index[-1] - index[-2]
-    
+
     call = callAll[callAll.index > FF]
     put  = putAll[putAll.index < FF]
     FF_idx = FF
@@ -184,15 +184,22 @@ def calDayVIX(vixDate):
 
     # 拿取所需期权信息
     options = getHistDayOptions(vixDate,options_data)
+    # print('options',options)
     near, nexts = getNearNextOptExpDate(options, vixDate)
+    # print('near',near,'nexts',nexts)
+
     shibor = periodsSplineRiskFreeInterestRate(options, vixDate)
+    # print(shibor)
     R_near = shibor[datetime(near.year,near.month,near.day)]
     R_next = shibor[datetime(nexts.year,nexts.month,nexts.day)]
-    
+
     str_near = changeste(near)
+    # print(str_near)
     str_nexts = changeste(nexts)
+    # print(R_near,R_next,str_near,str_nexts)
     optionsNearTerm = options[options.EXE_ENDDATE == str_near]
     optionsNextTerm = options[options.EXE_ENDDATE == str_nexts]
+    # print('test',optionsNearTerm)
     # time to expiration
     vixDate = datetime.strptime(vixDate,'%Y/%m/%d')
     T_near = (near - vixDate).days/365.0
@@ -213,24 +220,27 @@ def calDayVIX(vixDate):
     vix = T_near*w*near_sigma + T_next*(1 - w)*next_sigma
     return 100*np.sqrt(abs(vix)*365.0/30.0)
 
-ivix = []
-for day in tradeday['DateTime']:
-    ivix.append(calDayVIX(day))
-    
-from pyecharts import Line
-attr = true_ivix[u'日期'].tolist()
-line = Line(u"中国波指")
-line.add("中证指数发布", attr, true_ivix[u'收盘价(元)'].tolist(), mark_point=["max"])
-line.add("手动计算", attr, ivix, mark_line=["max",'average'])
-line.render()
+# ivix = []
+# for day in tradeday['DateTime']:
+# ivix.append(calDayVIX(day))
+    # print(day,calDayVIX(day))
+def saveIvix():
+    print(tradeday['DateTime'].iloc[-1])
+    lastestday =  tradeday['DateTime'].iloc[-1]
+    import csv
+    csvfile = open('ALLHISTORYIVIX.csv', 'a', newline='')
+    writer = csv.writer(csvfile)
 
+    print(lastestday,calDayVIX(lastestday))
+    new = tuple((lastestday,calDayVIX(lastestday)))
+    writer.writerow((new))
+    csvfile.close()
+if __name__ == '__main__':
+    saveIvix()
 
-
-
-
-
-
-
-
-
-
+# from pyecharts import Line
+# attr = true_ivix[u'日期'].tolist()
+# line = Line(u"中国波指")
+# line.add("中证指数发布", attr, true_ivix[u'收盘价(元)'].tolist(), mark_point=["max"])
+# line.add("手动计算", attr, ivix, mark_line=["max",'average'])
+# line.render()
